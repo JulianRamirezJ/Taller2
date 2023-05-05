@@ -1,11 +1,9 @@
+const express = require('express');
+const PokeneaController = require('./controllers/PokeneaController');
 
+const router = express.Router();
 
-app.get('/', (req, res) => {
-    const number = Math.floor(Math.random() * 7);
-    res.send(phrases[number]+" - Container Id: "+os.hostname())
-})
+router.get('/pokenea', PokeneaController.getPokeneaAleatorio);
+router.get('/pokenea-imagen', PokeneaController.getImagenPokeneaAleatorio);
 
-app.get('/', (req, res) => {
-    const number = Math.floor(Math.random() * 7);
-    res.send(phrases[number]+" - Container Id: "+os.hostname())
-})
+module.exports = router;

@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 class Pokenea {
     constructor(id, nombre, altura, habilidad, imagen, fraseFilosofica) {
         this.id = id;
@@ -8,27 +10,31 @@ class Pokenea {
         this.fraseFilosofica = fraseFilosofica;
     }
 
-    get getId() {
+    getId() {
         return this.id;
     }
     
-    get getNombre() {
+    getNombre() {
         return this.nombre;
     }
     
-    get getAltura() {
+    getAltura() {
         return this.altura;
     }
     
-    get getHabilidad() {
+    getHabilidad() {
         return this.habilidad;
-    }
-    
-    get getImagen() {
-        return this.imagen;
-    }
-    
-    get getFraseFilosofica() {
+    }   
+
+    getFraseFilosofica() {
         return this.fraseFilosofica;
     }
+    
+    getImagen() {
+        const imageBuffer = fs.readFileSync(this.imagen);
+        return imageBuffer;
+    }
+    
 }
+module.exports = Pokenea;
+
