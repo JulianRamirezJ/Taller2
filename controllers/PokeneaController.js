@@ -1,4 +1,6 @@
 const Pokenea = require('../models/Pokenea');
+const LocalStorage = require('../interfaces/LocalStorage');
+
 const pokeneas = require('../data/pokeneas');
 
 const PokeneaController = {
@@ -34,7 +36,8 @@ const PokeneaController = {
             pokeneaSeleccionado[4],
             pokeneaSeleccionado[5]
         );
-        const image = pokenea.getImagen();
+        const imageInterface = new LocalStorage();
+        const image = imageInterface.getImagen(pokenea.imagen);
 
         res.send(`
         <div>

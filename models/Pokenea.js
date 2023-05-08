@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 class Pokenea {
     constructor(id, nombre, altura, habilidad, imagen, fraseFilosofica) {
         this.id = id;
@@ -30,10 +28,10 @@ class Pokenea {
         return this.fraseFilosofica;
     }
     
-    getImagen() {
+    /**getImagen() {
         const imageBuffer = fs.readFileSync(this.imagen);
         return imageBuffer;
-    }
+    }**/
     
 }
 module.exports = Pokenea;
